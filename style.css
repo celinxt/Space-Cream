@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --font-p: "Palanquin", sans-serif;
+  --font-s: "Staatliches", cursive;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+
+  padding: 6vw;
+
+  background: #8e9aaf;
+}
+
+header img {
+  width: fit-content;
+  height: fit-content;
+  animation: animaLogo 1s ease 0s 1 normal forwards;
+}
+
+#title {
+  background: #cbc0d3;
+  width: 120%;
+  padding: 1vh;
+}
+
+h1 {
+  font-family: var(--font-s);
+  font-weight: 400;
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+
+  animation: animaTitle 1s ease 0s 1 normal forwards;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+
+  padding: 5vh;
+}
+
+.hide {
+  display: none;
+}
+
+#lorem {
+  font-family: var(--font-p);
+  font-weight: 400;
+  font-size: 2rem;
+  color: #23053a;
+  text-align: center;
+
+  animation: animaLorem 1s ease 0s 1 normal forwards;
+}
+
+img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+
+  border-radius: 2rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  position: relative;
+}
+
+.card span {
+  font-family: var(--font-s);
+  font-weight: 400;
+  font-size: 2rem;
+  color: #4a4e69;
+
+  display: inline-block;
+  position: absolute;
+  left: 55vw;
+  margin-top: 2vh;
+  padding: 1vh 3vw;
+
+  background-color: #feeafa;
+  border-radius: 2rem;
+}
+
+footer p {
+  font-family: var(--font-p);
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+
+  margin: 6vh 0;
+}
+
+footer p a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Desktop */
+
+@media (min-width: 700px) {
+  body {
+    display: flex;
+    overflow-x: hidden;
+    height: auto;
+  }
+
+  header {
+    width: 35vw;
+    height: auto;
+  }
+
+  #title {
+    width: 35vw;
+  }
+
+  .hide {
+    display: inline;
+  }
+
+  .lorem-hide {
+    display: none;
+  }
+
+  .lorem-desktop {
+    font-family: var(--font-p);
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #fff;
+    line-height: 3rem;
+
+    display: inline-block;
+    margin-top: 5vh;
+
+    animation: animaLoremDesktop 1s ease 0s 1 normal forwards;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #container {
+    display: grid;
+    grid-template-areas: "A B C" "D B F" "D E F";
+  }
+
+  #container div:nth-child(1) {
+    grid-area: A;
+  }
+
+  #container div:nth-child(2) {
+    grid-area: B;
+  }
+
+  #container div:nth-child(3) {
+    grid-area: C;
+  }
+
+  #container div:nth-child(4) {
+    grid-area: D;
+  }
+
+  #container div:nth-child(5) {
+    grid-area: E;
+  }
+
+  #container div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .card {
+    animation: animaCard 1s ease 0s 1 normal forwards;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  .card span {
+    display: none;
+  }
+}
+
+/* Animation */
+
+@keyframes animaLogo {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(-65px);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(-28px);
+  }
+
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateY(-8px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animaTitle {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animaLorem {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animaCard {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animaLoremDesktop {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateX(-68px);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateX(-28px);
+  }
+
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateX(-8px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateX(0);
+  }
+}
